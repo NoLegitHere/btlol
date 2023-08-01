@@ -1544,6 +1544,16 @@ img {
   width: 9850px
 }
 
+.load_pic {
+  width: 985px; 
+  position: relative; 
+  left: 0px; 
+  top: 0px; 
+  z-index: 998; 
+  opacity: 0; 
+  transition: opacity 500ms linear 0s;
+}
+
 @media (max-width:767px) {
   .mid-header:after {
     content: '';
