@@ -1539,6 +1539,10 @@ img {
   display: block
 }
 
+.load_flex {
+  display: flex;
+}
+
 .load_op {
   opacity: 1;
   width: 9850px
