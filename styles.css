@@ -3927,3 +3927,7 @@ div.step-maker .step:last-child:before {
 .title-info, .logout-account {
   text-decoration: none;
 }
+
+.st {
+  display: block;
+}
