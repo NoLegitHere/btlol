@@ -7,6 +7,10 @@
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="preload" href="font/display-regular.ttf" as="font" crossorigin="anonymous">
+    <link rel="preload" href="font/display-black.ttf" as="font" crossorigin="anonymous">
+    <link rel="preload" href="font/display-extrabold.ttf" as="font" crossorigin="anonymous">
+    <link rel="preload" href="font/display-regular.ttf" as="font" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/d0d6301a4c.js" crossorigin="anonymous"></script>
 </head>
 
@@ -729,13 +733,46 @@
                                 <img src="img/index_qc_3.jpg" alt="cc">
                             </div>
                         </div>
-                        <script src="index.js"></script>
                     </div>
                 </div>
             </div>
         </div>    
     </section>
-    
+    <section class="section_product_hot">
+        <div class="container py-2 mb-3 card border-0">
+            <a class="link" href="tatcasanpham.html" title="1">
+                <img src="img/banner_1.png">
+            </a>
+            <div class="blue-background row mt-3">
+                <div class="col-6 col-md-15">
+                    <div class="item_product_main">
+                        <form action="tatcasanpham.html" method="post" class="variants product-action" enctype="multipart/form-data">
+                            <div class="product-thumbnail pos-relative">
+                                <a class="image_thumbnail pos-relative embed-responsive embed-responsive-1by1" href="chitietsanpham.html" title="Bút dạ màu - bút marker 36 màu Thiên Long Colokit ART MARKER AM-C005-KM">
+                                    <img decoding="async" loading="lazyload" class="lazyload loaded scale" src="img/product-1.jpg">
+                                </a>
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-name">
+                                    <span class="label-promo new">New</span>
+                                    <a href="chitietsanpham.html" title="Bút dạ màu - bút marker 36 màu Thiên Long Colokit ART MARKER AM-C005-KM">Bút dạ màu - bút marker 36 màu Thiên Long Colokit ART MARKER AM-C005-KM</a>
+                                </h3>
+                                <div class="price-box">
+                                    <span class="price">288,000₫</span>
+                                    <span class="compare-price">320,000₫</span>
+                                </div>
+                                <div class="product-action custom">
+                                    <div class="label_product">
+                                        <div class="label_wrapper"> - 10%</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <footer class="footer bg-white">
         <div class="mid-footer">
             <div class="container">
@@ -849,6 +886,6 @@
         </div>
     </footer>
     <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="index.js"></script>
 </body>
-
 </html>
