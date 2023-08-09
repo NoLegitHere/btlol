@@ -1952,19 +1952,15 @@ img {
   z-index: 2;
 }
 
-.section.section_product_new .pos-relative.embed-responsive.embed-responsive-1by1 img {
-  --image-scale: 1.09 !important;
-}
 
 .pos-relative.embed-responsive.embed-responsive-1by1 img {
-  --image-scale: 1;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(var(--image-scale));
-  object-fit: contain;
   max-width: 100%;
   max-height: 100%;
+  top: 50%;
+  bottom: 50%;
+  transform: translate(50%, -50%);
+  object-fit: contain;
 }
 
 @media (max-width: 767px) {
