@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="preload" href="font/display-regular.ttf" as="font" crossorigin="anonymous">
+    <link rel="preload" href="font/display-black.ttf" as="font" crossorigin="anonymous">
+    <link rel="preload" href="font/display-extrabold.ttf" as="font" crossorigin="anonymous">
+    <link rel="preload" href="font/display-regular.ttf" as="font" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/d0d6301a4c.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="header header_menu">
+        <div class="mid-header wid_100 d-flex align-items-center">
+            <div class="container px-md-0">
+
+                <div class="row align-items-center">
+                    <div class="col-3 header-right d-lg-none d-block">
+                        <div class="toggle-nav btn menu-bar mr-4 ml-0 p-0  d-lg-none d-flex text-white">
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-2 header-right">
+
+
+                        <a href="index.html" class="logo-wrapper ">
+                            <img class="img-fluid" src="img/logo.png" alt="logo Thiên Long Shop">
+                        </a>
+
+                    </div>
+                    <div class="col-12 col-lg-4 col-xl-4 header-center" id="search-header">
+                        <form action="/search" method="get" class="input-group search-bar custom-input-group "
+                            role="search">
+                            <input type="text" name="q" value="" autocomplete="off" placeholder="Tìm kiếm sản phẩm..."
+                                class="input-group-field auto-search form-control " required="">
+                            <input type="hidden" name="type" value="product">
+                            <span class="input-group-btn btn-action">
+                                <button type="submit" class="btn text-white icon-fallback-text h-100">
+                                    <span class="fa fa-search"></span>
+                                </button>
+                            </span>
+                        </form>
+                        <div class="search-suggest"></div>
+                    </div>
+                    <div class="col-3 col-lg-6 col-xl-6 ">
+                        <ul class="header-left mb-0 float-right list-unstyled  d-flex align-items-center w-100">
+                            <li class="media d-lg-flex d-none hotline ">
+                                <div class="align-self-center mr-2 icon-header">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#27c8fe"
+                                        class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <div class="media-body d-md-flex flex-column d-none ">
+                                    <span>Hỗ trợ khách hàng</span>
+                                    <a class="font-weight-bold d-block" href="tel:1900866819" title="1900 866 819">
+                                        1900 866 819
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="ml-4 mr-4 mr-md-3 ml-md-3 media d-lg-flex d-none">
+                                <div class="align-self-center mr-2 icon-header">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#27c8fe"
+                                        class="bi bi-person-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <div class="media-body d-md-flex flex-column d-none" id="header_account"><a
+                                        rel="nofollow" href="dangky.html" class="d-block" title="Đăng ký">Đăng
+                                        ký</a>
+                                    <small><a href="dangnhap.html" title="Đăng nhập" class="font-weight: light">Đăng
+                                            nhập</a></small>
+                                </div>
+                            </li>
+                            <li class="cartgroup  ml-0 mr-2 mr-md-0">
+                                <div class="mini-cart text-xs-center">
+                                    <a class="img_hover_cart" href="giohang.html" title="Giỏ hàng">
+                                        <i class="fas fa-shopping-bag"></i>
+                                        <span class="mx-2 d-md-block d-none">Giỏ hàng</span>
+                                        <span class="count_item count_item_pr">0</span>
+                                    </a>
+                                    <div class="top-cart-content card ">
+                                        <form id="cart-header-form">
+                                            <ul id="cart-sidebar" class="mini-products-list count_li list-unstyled">
+                                                <div class="no-item">
+                                                    <p>Không có sản phẩm nào.</p>
+                                                </div>
+                                            </ul>
+                                        </form>
+                                    </div>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="col-12 offset-lg-2">
+                        <div class="type-suggest"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="subheader ">
+        <div class="container px-md-0">
+            <div class="toogle-nav-wrapper">
+                <div class="icon-bar btn menu-bar mr-2 ml-0 p-0 d-inline-flex text-white">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                Danh sách sản phẩm
+                <div class="navigation-wrapper">
+                    <ul class="navigation list-group list-group-flush scroll">
+                        <li class="menu-item list-group-item ">
+                            <a href="tatcasanpham.html"
+                                class="menu-item__link d-flex justify-content-between align-items-center"
+                                title="Bút viết">
+                                <span>
+                                    <img class="lazyload loaded" src="img/menu_icon_1.png"
+                                        data-src="img/menu_icon_1.png" alt="Bút viết" data-was-processed="true">
+                                    Bút viết</span>
+                                <i class="fas fa-chevron-right float-right" data-toggle-submenu=""></i>
+                            </a>
+                            <div class="submenu scroll ">
+                                <ul class="submenu__list">
+                                    <div class="row">
+                                        <div class="col">
+                                            <li class="submenu__item ">
+                                                <a id="bestseller" class="link" href="tatcasanpham.html"
+                                                    title="BEST SELLER">
+                                                    <span>BEST SELLER</span>
+                                                    <img style="vertical-align:top;" src="img/flame.gif" width="15"
+                                                        height="17" alt="Hot Fire">
+                                                </a>
+                                            </li>
+                                            <li class="submenu__item ">
+                                                <a class="link" href="tatcasanpham.html" title="Bút bi">
+                                                    <span>Bút bi</span>
+                                                </a>
+                                            </li>
+                                            <li class="submenu__item ">
+                                                <a class="link" href="tatcasanpham.html" title="Bút Gel">
+                                                    <span>Bút Gel</span>
+                                                </a>
+                                            </li>
+                                            <li class="submenu__item ">
+                                                <a class="link" href="tatcasanpham.html" title="BST Bút chì">
+                                                    <span>BST Bút chì</span>
+                                                    <i class="fas fa-chevron-right float-right"
+                                                        data-toggle-submenu=""></i>
+                                                </a>
+                                                <div class="submenu ">
+                                                    <ul class="submenu__list">
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                <li class="submenu__item ">
+                                                                    <a class="link" href="tatcasanpham.html"
+                                                                        title="Bút chì"><span>Bút chì</span></a>
+                                                                </li>
+                                                                <li class="submenu__item ">
+                                                                    <a class="link" href="tatcasanpham.html"
+                                                                        title="Chuốt chì"><span>Chuốt chì</span></a>
+                                                                </li>
+                                                                <li class="submenu__item ">
+                                                                    <a class="link" href="tatcasanpham.html"
+                                                                        title="Gôm tẩy"><span>Gôm tẩy</span></a>
+                                                                </li>
+                                                                <li class="submenu__item ">
+                                                                    <a class="link" href="tatcasanpham.html"
+                                                                        title="Bút chì kỹ thuật"><span>Bút chì kỹ
+                                                                            thuật</span></a>
+                                                                </li>
+                                                            </div>
+                                                        </div>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li class="submenu__item ">
+                                                <a class="link" href="tatcasanpham.html" title="Bút dạ quang">
+                                                    <span>Bút dạ quang</span>
+                                                </a>
+                                            </li>
+                                            <li class="submenu__item ">
+                                                <a class="link" href="tatcasanpham.html" title="Bút lông kim">
+                                                    <span>Bút lông kim</span>
+                                                </a>
+                                            </li>
+                                        </div>
+                                    </div>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="menu-item list-group-item ">
+                            <a href="tatcasanpham.html"
+                                class="menu-item__link d-flex justify-content-between align-items-center"
+                                title="Văn phòng phẩm">
+                                <span>
+                                    <img class="lazyload loaded" src="img/menu_icon_2.png" data-src="img/menu_icon_2"
+                                        alt="Văn phòng phẩm" data-was-processed="true">
+                                    Văn phòng phẩm</span>
+                                <i class="fas fa-chevron-right float-right" data-toggle-submenu=""></i>
+                            </a>
+                            <div class="submenu scroll ">
+                                <ul class="submenu__list">
+                                    <div class="row">
+                                        <div class="col">
+                                            <li class="submenu__item ">
+                                                <a id="bestseller" class="link" href="tatcasanpham.html"
+                                                    title="BEST SELLER">
+                                                    <span>BEST SELLER</span>
+                                                    <img style="vertical-align:top;" src="img/flame.gif" width="15"
+                                                        height="17" alt="Hot Fire">
+                                                </a>
+                                            </li>
+                                            <li class="submenu__item ">
+                                                <a class="link" href="tatcasanpham.html" title="Combo VPP">
+                                                    <span>Combo VPP</span>
+                                                </a>
+                                            </li>
+                                            <li class="submenu__item ">
+                                                <a class="link" href="tatcasanpham.html" title="Bút viết">
+                                                    <span>Bút viết</span>
+                                                </a>
+                                            </li>
+                                            <li class="submenu__item ">
+                                                <a class="link" href="tatcasanpham.html" title="Giấy văn phòng">
+                                                    <span>Giấy văn phòng</span>
+                                                    <i class="fas fa-chevron-right float-right"
+                                                        data-toggle-submenu=""></i>
+                                                </a>
+                                                <div class="submenu ">
+                                                    <ul class="submenu__list">
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                <li class="submenu__item ">
+                                                                    <a class="link" href="tatcasanpham.html"
+                                                                        title="Giấy in - giấy photo"><span>Giấy in -
+                                                                            giấy photo</span></a>
+                                                                </li>
+                                                                <li class="submenu__item ">
+                                                                    <a class="link" href="tatcasanpham.html"
+                                                                        title="Combo giấy in - giấy photo"><span>Combo
+                                                                            giấy in - giấy photo</span></a>
+                                                                </li>
+                                                                <li class="submenu__item ">
+                                                                    <a class="link" href="tatcasanpham.html"
+                                                                        title="Giấy ghi chú"><span>Giấy ghi
+                                                                            chú</span></a>
+                                                                </li>
+                                                                <li class="submenu__item ">
+                                                                    <a class="link" href="tatcasanpham.html"
+                                                                        title="Giấy Decal - giấy dán nhãn"><span>Giấy
+                                                                            Decal - giấy dán nhãn</span></a>
+                                                                </li>
+                                                            </div>
+                                                        </div>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li class="submenu__item ">
+                                                <a class="link" href="tatcasanpham.html" title="Dụng cụ văn phòng">
+                                                    <span>Dụng cụ văn phòng</span>
+                                                    <i class="fas fa-chevron-right float-right"
+                                                        data-toggle-submenu=""></i>
+                                                </a>
+                                                <div class="submenu ">
+                                                    <ul class="submenu__list">
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                <li class="submenu__item ">
+                                                                    <a class="link" href="tatcasanpham.html"
+                                                                        title="Kéo văn phòng, rọc giấy"><span>Kéo văn
+                                                                            phòng, rọc giấy</span></a>
+                                                                </li>
+                                                                <li class="submenu__item ">
+                                                                    <a class="link" href="tatcasanpham.html"
+                                                                        title="Kẹp bướm"><span>Kẹp bướm</span></a>
+                                                                </li>
+                                                                <li class="submenu__item ">
+                                                                    <a class="link" href="tatcasanpham.html"
+                                                                        title="Bấm kim - gỡ kim"><span>Bấm kim - gỡ
+                                                                            kim</span></a>
+                                                                </li>
+                                                                <li class="submenu__item ">
+                                                                    <a class="link" href="tatcasanpham.html"
+                                                                        title="Hộp cắm bút"><span>Hộp cắm bút</span></a>
+                                                                </li>
+                                                                <li class="submenu__item ">
+                                                                    <a class="link" href="tatcasanpham.html"
+                                                                        title="Máy tính cầm tay"><span>Máy tính cầm
+                                                                            tay</span></a>
+                                                                </li>
+                                                                <li class="submenu__item ">
+                                                                    <a class="link" href="tatcasanpham.html"
+                                                                        title="Sản phẩm khác"><span>Sản phẩm
+                                                                            khác</span></a>
+                                                                </li>
+                                                            </div>
+                                                        </div>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li class="submenu__item ">
+                                                <a class="link" href="tatcasanpham.html" title="File bìa hồ sơ">
+                                                    <span>File bìa hồ sơ</span>
+                                                    <i class="fas fa-chevron-right float-right"
+                                                        data-toggle-submenu=""></i>
+                                                </a>
+                                                <div class="submenu ">
+                                                    <ul class="submenu__list">
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                <li class="submenu__item ">
+                                                                    <a class="link" href="tatcasanpham.html"
+                                                                        title="Bìa lá - bìa nhiều lá"><span>Bìa lá - bìa
+                                                                            nhiều lá</span></a>
+                                                                </li>
+                                                                <li class="submenu__item ">
+                                                                    <a class="link" href="tatcasanpham.html"
+                                                                        title="Bìa lỗ"><span>Bìa lỗ</span></a>
+                                                                </li>
+                                                                <li class="submenu__item ">
+                                                                    <a class="link" href="tatcasanpham.html"
+                                                                        title="Bìa nút"><span>Bìa nút</span></a>
+                                                                </li>
+                                                                <li class="submenu__item ">
+                                                                    <a class="link" href="tatcasanpham.html"
+                                                                        title="Bìa nhẫn"><span>Bìa nhẫn</span></a>
+                                                                </li>
+                                                                <li class="submenu__item ">
+                                                                    <a class="link" href="tatcasanpham.html"
+                                                                        title="Bìa cây - Bìa treo"><span>Bìa cây - Bìa
+                                                                            treo</span></a>
+                                                                </li>
+                                                                <li class="submenu__item ">
+                                                                    <a class="link" href="tatcasanpham.html"
+                                                                        title="Bìa trình ký"><span>Bìa trình
+                                                                            ký</span></a>
+                                                                </li>
+                                                            </div>
+                                                        </div>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                        </div>
+                                    </div>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="menu-item list-group-item label-new">
+                            <a href="tatcasanpham.html"
+                                class="menu-item__link d-flex justify-content-between align-items-center"
+                                title="Dụng Cụ Học Tập">
+                                <span>
+                                    <img class="lazyload loaded" src="img/menu_icon_3.png"
+                                        data-src="img/menu_icon_3.png" alt="Dụng Cụ Học Tập" data-was-processed="true">
+                                    Dụng Cụ Học Tập</span>
+                                <i class="fas fa-chevron-right float-right" data-toggle-submenu=""></i>
+                            </a>
+                            <div class="submenu scroll large">
+                                <ul class="submenu__list">
+                                    <div class="row">
+                                        <div class="col">
+                                            <li class="submenu__item ">
+                                                <a id="bestseller" class="link"
+                                                    href="/collections/best-seller-dung-cu-hoc-tap" title="BEST SELLER">
+                                                    <span>BEST SELLER</span>
+                                                    <img style="vertical-align:top;" src="img/flame.gif" width="15"
+                                                        height="17" alt="Hot Fire">
+                                                </a>
+                                            </li>
+                                            <li class="submenu__item label-new">
+                                                <a class="link" href="tatcasanpham.html" title="Balo">
+                                                    <span>Balo</span>
+                                                </a>
+                                            </li>
+                                            <li class="submenu__item label-new">
+                                                <a class="link" href="tatcasanpham.html" title="Máy tính cầm tay">
+                                                    <span>Máy tính cầm tay</span>
+                                                </a>
+                                            </li>
+                                            <li class="submenu__item ">
+                                                <a class="link" href="tatcasanpham.html" title="Tập học sinh">
+                                                    <span>Tập học sinh</span>
+                                                </a>
+                                            </li>
+                                            <li class="submenu__item ">
+                                                <a class="link" href="tatcasanpham.html"
+                                                    title="Bìa bao - giấy nhãn - giấy kiểm tra">
+                                                    <span>Bìa bao - giấy nhãn - giấy kiểm tra</span>
+                                                </a>
+                                            </li>
+                                            <li class="submenu__item ">
+                                                <a class="link" href="tatcasanpham.html" title="Bút viết học sinh">
+                                                    <span>Bút viết học sinh</span>
+                                                </a>
+                                            </li>
+                                        </div>
+                                        <div class="col">
+                                            <li class="submenu__item ">
+                                                <a class="link" href="tatcasanpham.html" title="Keo Hồ Dán">
+                                                    <span>Keo Hồ Dán</span>
+                                                </a>
+                                            </li>
+                                            <li class="submenu__item ">
+                                                <a class="link" href="tatcasanpham.html" title="Bảng học sinh">
+                                                    <span>Bảng học sinh</span>
+                                                </a>
+                                            </li>
+                                            <li class="submenu__item ">
+                                                <a class="link" href="tatcasanpham.html" title="Balo Túi Rút">
+                                                    <span>Balo Túi Rút</span>
+                                                </a>
+                                            </li>
+                                            <li class="submenu__item ">
+                                                <a class="link" href="tatcasanpham.html" title="Bình đựng nước">
+                                                    <span>Bình đựng nước</span>
+                                                </a>
+                                            </li>
+                                            <li class="submenu__item ">
+                                                <a class="link" href="tatcasanpham.html" title="Bộ Dụng Cụ Học Tập">
+                                                    <span>Bộ Dụng Cụ Học Tập</span>
+                                                </a>
+                                            </li>
+                                            <li class="submenu__item ">
+                                                <a class="link" href="tatcasanpham.html" title="Dụng cụ màu nước">
+                                                    <span>Dụng cụ màu nước</span>
+                                                </a>
+                                            </li>
+                                        </div>
+                                    </div>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="menu-item list-group-item label-new">
+                            <a href="tatcasanpham.html"
+                                class="menu-item__link d-flex justify-content-between align-items-center"
+                                title="Mỹ Thuật">
+                                <span>
+                                    <img class="lazyload loaded" src="img/menu_icon_4.png"
+                                        data-src="img/menu_icon_4.png" alt="Mỹ Thuật" data-was-processed="true">
+                                    Mỹ Thuật</span>
+                                <i class="fas fa-chevron-right float-right" data-toggle-submenu=""></i>
+                            </a>
+                            <div class="submenu scroll ">
+                                <ul class="submenu__list">
+                                    <div class="row">
+                                        <div class="col">
+                                            <li class="submenu__item ">
+                                                <a id="bestseller" class="link" href="tatcasanpham.html"
+                                                    title="BEST SELLER">
+                                                    <span>BEST SELLER</span>
+                                                    <img style="vertical-align:top;" src="img/flame.gif" width="15"
+                                                        height="17" alt="Hot Fire">
+                                                </a>
+                                            </li>
+                                            <li class="submenu__item label-new">
+                                                <a class="link" href="tatcasanpham.html" title="Bút màu">
+                                                    <span>Bút màu</span>
+                                                    <i class="fas fa-chevron-right float-right"
+                                                        data-toggle-submenu=""></i>
+                                                </a>
+                                                <div class="submenu ">
+                                                    <ul class="submenu__list">
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                <li class="submenu__item label-new">
+                                                                    <a class="link" href="tatcasanpham.html"
+                                                                        title="Bút lông màu"><span>Bút lông
+                                                                            màu</span></a>
+                                                                </li>
+                                                                <li class="submenu__item ">
+                                                                    <a class="link" href="tatcasanpham.html"
+                                                                        title="Bút sáp màu"><span>Bút sáp màu</span></a>
+                                                                </li>
+                                                                <li class="submenu__item ">
+                                                                    <a class="link" href="tatcasanpham.html"
+                                                                        title="Bút sáp dầu"><span>Bút sáp dầu</span></a>
+                                                                </li>
+                                                                <li class="submenu__item ">
+                                                                    <a class="link" href="tatcasanpham.html"
+                                                                        title="Bút chì màu"><span>Bút chì màu</span></a>
+                                                                </li>
+                                                                <li class="submenu__item ">
+                                                                    <a class="link" href="tatcasanpham.html"
+                                                                        title="Bút nhựa màu"><span>Bút nhựa
+                                                                            màu</span></a>
+                                                                </li>
+                                                            </div>
+                                                        </div>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li class="submenu__item ">
+                                                <a class="link" href="tatcasanpham.html" title="Màu nước">
+                                                    <span>Màu nước</span>
+                                                </a>
+                                            </li>
+                                            <li class="submenu__item ">
+                                                <a class="link" href="tatcasanpham.html" title="Sáp nặn">
+                                                    <span>Sáp nặn</span>
+                                                </a>
+                                            </li>
+                                            <li class="submenu__item ">
+                                                <a class="link" href="tatcasanpham.html" title="Tập tô màu - tô chữ">
+                                                    <span>Tập tô màu - tô chữ</span>
+                                                </a>
+                                            </li>
+                                            <li class="submenu__item label-new">
+                                                <a class="link" href="tatcasanpham.html"
+                                                    title="Combo mĩ thuật tiện lợi">
+                                                    <span>Combo mĩ thuật tiện lợi</span>
+                                                </a>
+                                            </li>
+                                        </div>
+                                    </div>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="menu-item list-group-item ">
+                            <a href="tatcasanpham.html"
+                                class="menu-item__link d-flex justify-content-between align-items-center"
+                                title="Đồ chơi">
+                                <span>
+                                    <img class="lazyload loaded" src="img/menu_icon_5.png"
+                                        data-src="img/menu_icon_5.png" alt="Đồ chơi" data-was-processed="true">
+                                    Đồ chơi</span>
+                                <i class="fas fa-chevron-right float-right" data-toggle-submenu=""></i>
+                            </a>
+                            <div class="submenu scroll ">
+                                <ul class="submenu__list">
+                                    <div class="row">
+                                        <div class="col">
+                                            <li class="submenu__item ">
+                                                <a id="bestseller" class="link" href="tatcasanpham.html"
+                                                    title="BEST SELLER">
+                                                    <span>BEST SELLER</span>
+                                                    <img style="vertical-align:top;" src="img/flame.gif" width="15"
+                                                        height="17" alt="Hot Fire">
+                                                </a>
+                                            </li>
+                                            <li class="submenu__item ">
+                                                <a class="link" href="tatcasanpham.html" title="Thương hiệu Đồ chơi">
+                                                    <span>Thương hiệu Đồ chơi</span>
+                                                    <i class="fas fa-chevron-right float-right"
+                                                        data-toggle-submenu=""></i>
+                                                </a>
+                                                <div class="submenu large">
+                                                    <ul class="submenu__list">
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                <li class="submenu__item ">
+                                                                    <a class="link" href="tatcasanpham.html"
+                                                                        title="Beast Kingdom"><span>Beast
+                                                                            Kingdom</span></a>
+                                                                </li>
+                                                                <li class="submenu__item ">
+                                                                    <a class="link" href="tatcasanpham.html"
+                                                                        title="Cobi"><span>Cobi</span></a>
+                                                                </li>
+                                                                <li class="submenu__item ">
+                                                                    <a class="link" href="tatcasanpham.html"
+                                                                        title="Lena"><span>Lena</span></a>
+                                                                </li>
+                                                                <li class="submenu__item ">
+                                                                    <a class="link" href="tatcasanpham.html"
+                                                                        title="Miniland"><span>Miniland</span></a>
+                                                                </li>
+                                                                <li class="submenu__item ">
+                                                                    <a class="link" href="tatcasanpham.html"
+                                                                        title="Popular Playthings"><span>Popular
+                                                                            Playthings</span></a>
+                                                                </li>
+                                                                <li class="submenu__item ">
+                                                                    <a class="link" href="tatcasanpham.html"
+                                                                        title="Whistle Racer"><span>Whistle
+                                                                            Racer</span></a>
+                                                                </li>
+                                                            </div>
+                                                            <div class="col">
+                                                                <li class="submenu__item ">
+                                                                    <a class="link" href="tatcasanpham.html"
+                                                                        title="Guoan Toys"><span>Guoan Toys</span></a>
+                                                                </li>
+                                                                <li class="submenu__item ">
+                                                                    <a class="link" href="tatcasanpham.html"
+                                                                        title="KTT"><span>KTT</span></a>
+                                                                </li>
+                                                                <li class="submenu__item ">
+                                                                    <a class="link" href="tatcasanpham.html"
+                                                                        title="YYL"><span>YYL</span></a>
+                                                                </li>
+                                                                <li class="submenu__item ">
+                                                                    <a class="link" href="tatcasanpham.html"
+                                                                        title="Yasini"><span>Yasini</span></a>
+                                                                </li>
+                                                                <li class="submenu__item ">
+                                                                    <a class="link" href="tatcasanpham.html"
+                                                                        title="KLX"><span>KLX</span></a>
+                                                                </li>
+                                                                <li class="submenu__item ">
+                                                                    <a class="link" href="tatcasanpham.html"
+                                                                        title="BTI"><span>BTI</span></a>
+                                                                </li>
+                                                            </div>
+                                                        </div>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li class="submenu__item ">
+                                                <a class="link" href="tatcasanpham.html" title="Đồ chơi bé trai">
+                                                    <span>Đồ chơi bé trai</span>
+                                                    <i class="fas fa-chevron-right float-right"
+                                                        data-toggle-submenu=""></i>
+                                                </a>
+                                                <div class="submenu ">
+                                                    <ul class="submenu__list">
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                <li class="submenu__item ">
+                                                                    <a class="link" href="tatcasanpham.html"
+                                                                        title="Đồ chơi lắp ráp"><span>Đồ chơi lắp
+                                                                            ráp</span></a>
+                                                                </li>
+                                                                <li class="submenu__item ">
+                                                                    <a class="link" href="tatcasanpham.html"
+                                                                        title="Đồ chơi điều khiển"><span>Đồ chơi điều
+                                                                            khiển</span></a>
+                                                                </li>
+                                                                <li class="submenu__item ">
+                                                                    <a class="link" href="tatcasanpham.html"
+                                                                        title="Xe mô hình"><span>Xe mô hình</span></a>
+                                                                </li>
+                                                                <li class="submenu__item ">
+                                                                    <a class="link" href="tatcasanpham.html"
+                                                                        title="Máy tạo bong bóng"><span>Máy tạo bong
+                                                                            bóng</span></a>
+                                                                </li>
+                                                                <li class="submenu__item ">
+                                                                    <a class="link" href="tatcasanpham.html"
+                                                                        title="Đồ chơi robot"><span>Đồ chơi
+                                                                            robot</span></a>
+                                                                </li>
+                                                                <li class="submenu__item ">
+                                                                    <a class="link" href="tatcasanpham.html"
+                                                                        title="Đồ chơi mô hình"><span>Đồ chơi mô
+                                                                            hình</span></a>
+                                                                </li>
+                                                            </div>
+                                                        </div>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li class="submenu__item ">
+                                                <a class="link" href="tatcasanpham.html" title="Đồ chơi bé gái">
+                                                    <span>Đồ chơi bé gái</span>
+                                                    <i class="fas fa-chevron-right float-right"
+                                                        data-toggle-submenu=""></i>
+                                                </a>
+                                                <div class="submenu ">
+                                                    <ul class="submenu__list">
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                <li class="submenu__item ">
+                                                                    <a class="link" href="tatcasanpham.html"
+                                                                        title="Búp bê, thú cưng"><span>Búp bê, thú
+                                                                            cưng</span></a>
+                                                                </li>
+                                                                <li class="submenu__item ">
+                                                                    <a class="link" href="tatcasanpham.html"
+                                                                        title="Máy tạo bong bóng"><span>Máy tạo bong
+                                                                            bóng</span></a>
+                                                                </li>
+                                                            </div>
+                                                        </div>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li class="submenu__item ">
+                                                <a class="link" href="tatcasanpham.html" title="Mô hình nhân vật">
+                                                    <span>Mô hình nhân vật</span>
+                                                    <i class="fas fa-chevron-right float-right"
+                                                        data-toggle-submenu=""></i>
+                                                </a>
+                                                <div class="submenu ">
+                                                    <ul class="submenu__list">
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                <li class="submenu__item ">
+                                                                    <a class="link" href="tatcasanpham.html"
+                                                                        title="Beast Kingdom"><span>Beast
+                                                                            Kingdom</span></a>
+                                                                </li>
+                                                            </div>
+                                                        </div>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                        </div>
+                                    </div>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="bread-crumb mb-3">
+        <span class="crumb-border"></span>
+        <div class="container px-md-0">
+            <div class="row">
+                <div class="col-12 a-left">
+                    <ul class="breadcrumb m-0 px-0" itemscope="" itemtype="http://schema.org/BreadcrumbList">					
+                        <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                            <a href="index.html" target="_self" itemprop="item"><span itemprop="name">Trang chủ</span></a>
+                            <meta itemprop="position" content="1">
+                            <span class="mr_lr">&nbsp;/&nbsp;</span>		
+                        </li>
+                        
+                        <li class="active" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                            <span itemprop="item" content="chinhsach"><span itemprop="name">Chính sách</span></span>
+                            <meta itemprop="position" content="2">
+                            <span class="mr_lr">&nbsp;/&nbsp;</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="footer bg-white">
+        <div class="mid-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-4 footer-click">
+                        <div class="logo-footer">
+                            <img src="img/footer_infor.png" alt="logo footer">
+                        </div>
+                        <div class="about-company">
+                            <p>
+                                <b>
+                                    Thienlong.vn - Website thương mại điện tử thuộc Tập đoàn Thiên Long
+                                </b>
+                            </p>
+                            <p>Công ty Cổ Phần Tập Đoàn Thiên Long</p>
+                            <p>GPĐKKD số 0301464830 do Sở KHĐT TP. Hồ Chí Minh cấp ngày 14/03/2005.</p>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-4 col-lg-3 footer-click mt-4">
+                        <h4 class="title-menu">ĐỊA CHỈ CÔNG TY</h4>
+                        <p>
+                            <b>Head Office:</b>
+                            Tầng 10, Sofic Tower, Số 10 Đường Mai Chí Thọ, Phường Thủ Thiêm, Thành Phố Thủ Đức, Thành
+                            Phố Hồ Chí Minh, Việt Nam
+                        </p>
+                        <p>
+                            <b>Miền Bắc:</b>
+                            Số 38, đường Gamuda Gardens 2-5, Khu đô thị mới C2 - Gamuda Gardens, Phường Trần Phú, Quận
+                            Hoàng Mai, Thành phố Hà Nội, Việt Nam.
+                        </p>
+                        <p>
+                            <b>Miền Trung:</b>
+                            38 Hoàng Văn Thái, P Hòa Minh, Quận Liên Chiểu, TP Đà Nẵng
+                        </p>
+                    </div>
+                    <div class="col-xs-12 col-md-6 col-lg-3 footer-click f-block f-support mt-4">
+                        <h4 class="title-menu clicked">
+                            HỖ TRỢ KHÁCH HÀNG
+                        </h4>
+                        <p>Hotline: 1900 866 819 </p>
+                        <p>salesonline@thienlongvn.com</p>
+                        <p></p>
+                        <ul class="list-menu">
+                            <li class="li_menu">
+                                <a class="link" href="huongdanmuahang.html" title="Hướng dẫn mua hàng">Hướng dẫn
+                                    mua hàng</a>
+                            </li>
+                            <li class="li_menu">
+                                <a class="link" href="huongdanthanhtoan.html" title="Hướng dẫn thanh toán">Hướng
+                                    dẫn thanh toán</a>
+                            </li>
+                            <li class="li_menu">
+                                <a class="link" href="chinhsach.html" title="Chính sách giao hàng">Chính
+                                    sách giao hàng</a>
+                            </li>
+                            <li class="li_menu">
+                                <a class="link" href="chinhsach.html"
+                                    title="Chính sách đổi trả &amp; hoàn tiền">Chính sách đổi trả &amp; hoàn tiền</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-12 col-md-6 col-lg-2 footer-click mt-4">
+                        <h4 class="title-menu clicked">
+                            VỀ THIENLONG.VN
+                        </h4>
+                        <ul class="list-menu">
+                            <li class="li_menu">
+                                <a class="link" href="gioithieu.html" title="Giới thiệu">Giới thiệu</a>
+                            </li>
+                            <li class="li_menu">
+                                <a class="link" href="chinhsach.html" title="Chính sách bảo mật">Chính sách
+                                    bảo mật</a>
+                            </li>
+                            <li class="li_menu">
+                                <a class="link" href="thongtinlienhe.html" title="Thông tin liên hệ">Thông tin liên
+                                    hệ</a>
+                            </li>
+                        </ul>
+                        <div class="social-footer">
+                            <h4 class="title-menu d-none">
+                                LIÊN KẾT VỚI CHÚNG TÔI
+                            </h4>
+                            <ul class="follow_option d-flex flex-wrap align-items-center p-0 list-unstyled">
+
+                                <li>
+                                    <a class="facebook link" href="https://www.facebook.com/FlexofficeOnline"><i
+                                            class="fab fa-facebook-f"></i></a>
+                                </li>
+                                <li>
+                                    <a class="youtube link"
+                                        href="https://www.youtube.com/channel/UCyRLb-DtRGFvEfvZa0rD8UQ">
+                                        <i class="fab fa-youtube"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-footer-bottom copyright clearfix py-2">
+            <div class="container">
+                <div class="row">
+                    <div id="copyright" class="fot-copyright">
+                        <span class="wsp">2023 © Thienlong.vn - Bản quyền thuộc Tập đoàn Thiên Long</span>
+                    </div>
+                </div>
+                <a href="#" id="back-to-top" class="backtop back-to-top show end" title="Lên đầu trang">
+                    <i class="fa fa-angle-up" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
