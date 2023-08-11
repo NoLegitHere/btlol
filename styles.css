@@ -2566,3 +2566,87 @@ strong {
 .nodisplay{
   display: none;
 }
+
+.linh {
+  display: none !important;
+}
+
+.red-filter {
+  --filter-color:#dd0b0b;
+}
+
+.black-filter {
+  --filter-color:#000000;
+}
+
+.yellow-filter {
+  --filter-color:#ffff00;
+}
+
+.pink-filter {
+  --filter-color:#ffc0cb;
+}
+
+.white-filter {
+  --filter-color:#ebebeb;
+}
+
+.blue-filter {
+  --filter-color:#007fff;
+}
+
+.silver-filter {
+  --filter-color:#c0c0c0;
+}
+
+.orange-filter {
+  --filter-color:#ffa500;
+}
+
+.green-filter {
+  --filter-color:#009f6b;
+}
+
+.purple-filter {
+  --filter-color:#8b00ff;
+}
+
+.bold-blue-filter {
+  --filter-color:#0044ff;
+}
+
+.lime-filter {
+  --filter-color:#009f6b;
+}
+
+.blue-violet.filter {
+  --filter-color:#304384;
+}
+
+.green-lime-filter {
+  --filter-color:#00ff00;
+}
+
+.lime-yellow.filter {
+  --filter-color:#ccff00;
+}
+
+.yellow-nghe-filter {
+  --filter-color:#fec864;
+}
+
+.dirt-yellow-filter {
+  --filter-color:#c79b07;
+}
+
+.grey-filter {
+  --filter-color:#888888;
+}
+
+.bold-pink-filter {
+  --filter-color:#f0569f;
+}
+
+.blue-purple.filter {
+  --filter-color:#6682c1;
+}
