@@ -1690,6 +1690,33 @@ img {
   font-size: 20px;
 }
 
+.dangnhap{
+  background-color: orange; 
+  border-radius:5px;
+  border:none;
+  height: 48px;
+  width: 630px;
+  font-size: 20px;
+  color: white;
+
+  
+}
+.dangky{
+  background-color: orange; 
+  border-radius:5px;
+  border:none;
+  height: 48px;
+  width: 630px;
+  font-size: 20px;
+  color: white;
+
+  
+}
+
+.required{
+  color:red;
+}
+
 .google-login-button {
   background-color: rgba(255, 0, 0, 0.774);
   margin-right: 5px
